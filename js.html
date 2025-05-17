@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HALOOO</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: palevioletred;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: cyan;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #hasil {
+            margin-top: 30px;
+            font-size: 22px;
+        }
+
+        .fade {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <h2>Masukan Nama Kamu</h2>
+    <input type="text" id="nama" placeholder="nama">
+    <button onclick="tampilkanNama()">Tampilkan</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function tampilkanNama() {
+            var nama = document.getElementById("nama").value;
+            var hasil = document.getElementById("hasil");
+
+            if (nama.trim() === "") {
+                alert("Isi dulu dong namanya...");
+                return;
+            }
+
+            hasil.innerHTML = "Halo, " + nama + " love youuu!";
+            hasil.classList.remove("fade");
+            void hasil.offsetWidth;
+            hasil.classList.add("fade");
+        }
+    </script>
+    
+</body>
+</html>
